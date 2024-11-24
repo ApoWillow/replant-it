@@ -1,0 +1,34 @@
+{
+	"schemaVersion": 1,
+	"id": "auto_replant",
+	"version": "${version}",
+	"name": "Replant it!",
+	"description": "A simple mod that forces you to replant your crops.",
+	"authors": [
+		"ApoWillow",
+		"Sn0wix_"
+	],
+	"contact": {
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT license",
+	"icon": "assets/auto-replant/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"com.apowillow.AutoReplantModClient"
+		]
+	},
+	"mixins": [
+		"auto-replant.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.21.3",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
