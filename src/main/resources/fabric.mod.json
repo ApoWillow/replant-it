@@ -19,9 +19,6 @@
 			"com.apowillow.AutoReplantModClient"
 		]
 	},
-	"mixins": [
-		"auto-replant.mixins.json"
-	],
 	"depends": {
 		"fabricloader": ">=0.16.9",
 		"minecraft": "~1.21.3",
