@@ -9,7 +9,8 @@
 		"Sn0wix_"
 	],
 	"contact": {
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/ApoWillow/replant-it/",
+		"issues": "https://github.com/ApoWillow/replant-it/issues"
 	},
 	"license": "MIT license",
 	"icon": "assets/auto-replant/icon.png",
@@ -20,8 +21,8 @@
 		]
 	},
 	"depends": {
-		"fabricloader": ">=0.16.9",
-		"minecraft": "~1.21.3",
+		"fabricloader": ">=0.16.10",
+		"minecraft": "~1.21.4",
 		"java": ">=21",
 		"fabric-api": "*"
 	},

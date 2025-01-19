@@ -3,8 +3,10 @@ package com.apowillow;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.event.client.player.ClientPlayerBlockBreakEvents;
+import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.CropBlock;
+import net.minecraft.block.NetherWartBlock;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.ingame.InventoryScreen;
 import net.minecraft.client.network.ClientPlayerEntity;
@@ -97,26 +99,13 @@ public class AutoReplantModClient implements ClientModInitializer {
     }
 
     // Get the seed item for a crop block
+    // Nether warts don't work currently, I will fix it when I have more time.
     private Item getSeedForCropBlock(CropBlock cropBlock) {
         try {
-            return cropBlock.getPickStack(null, null, null).getItem();
+            return new ItemStack(cropBlock).getItem();
         } catch (NullPointerException e) {
             return Items.AIR;
         }
-    }
-
-
-    // To prevent the server's anti cheat from activating.
-
-    private long lastReplantTime = 0;
-
-    private boolean canReplant() {
-        long currentTime = System.currentTimeMillis();
-        if (currentTime - lastReplantTime > 200) { // 200ms cooldown
-            lastReplantTime = currentTime;
-            return true;
-        }
-        return false;
     }
 
 }
